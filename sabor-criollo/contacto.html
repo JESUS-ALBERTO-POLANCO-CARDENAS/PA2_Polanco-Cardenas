@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con Sabor Criollo. Envíanos tus dudas o sugerencias de recetas.">
+    <title>Sabor Criollo - Contacto</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="svg/logo.svg" alt="Logo Sabor Criollo">
+                <h1>Sabor Criollo</h1>
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="recetas.html">Recetas</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-form-section">
+            <h2>¡Habla con nosotros!</h2>
+            <p>¿Tienes una receta familiar que quieres compartir? ¿Una duda? ¡Escríbenos!</p>
+            
+            <form action="#" method="post" class="contact-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="motivo">Motivo de Contacto:</label>
+                    <select id="motivo" name="motivo">
+                        <option value="duda">Duda sobre una receta</option>
+                        <option value="sugerencia">Sugerencia de receta</option>
+                        <option value="colaboracion">Colaboración</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Tu Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Sabor Criollo. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

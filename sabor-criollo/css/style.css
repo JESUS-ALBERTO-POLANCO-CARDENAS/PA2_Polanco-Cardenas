@@ -1,0 +1,301 @@
+/* --- Variables y Estilos Globales --- */
+:root {
+    --primary-color: #793c11; 
+    --secondary-color: #FF6347; 
+    --text-color: #333;
+    --bg-color: #eee4c7; 
+    --header-footer-bg: #e4b164; 
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* --- REQUISITO 2: Animación CSS (keyframes) --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Header y Navegación --- */
+.header {
+    background-color: var(--header-footer-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 15px;
+    /* REQUISITO 2: Transición CSS */
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo a:hover img {
+    transform: rotate(-45deg);
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.4s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+
+/* --- Página de Inicio --- */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.intro {
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #e55337;
+    transform: translateY(-3px);
+}
+
+/* --- Página de Recetas --- */
+/* REQUISITO 3: Estilos de Tabla */
+.recipe-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-table thead tr {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-align: left;
+}
+
+.recipe-table th, .recipe-table td {
+    padding: 12px 15px;
+}
+
+.recipe-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.recipe-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.recipe-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.recipe-table tbody tr:hover {
+    background-color: #f1dca7;
+    cursor: pointer;
+}
+
+/* REQUISITO 1: Estilos en imágenes */
+.recipe-figure {
+    margin: 0;
+    text-align: center;
+}
+
+.recipe-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    filter: saturate(1.2); /* Filtro para la imagen */
+    opacity: 0.9; /* Opacidad inicial */
+    transform: scale(1); /* Escala inicial */
+    transition: filter 0.4s, opacity 0.4s, transform 0.4s;
+}
+
+.recipe-image:hover {
+    filter: saturate(1.5) drop-shadow(0 0 15px rgba(0,0,0,0.4));
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.recipe-figure figcaption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
+
+.interactive-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Página de Contacto (Formulario) --- */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--header-footer-bg);
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Importante para el padding */
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #6a340e;
+}
+
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--header-footer-bg);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 40px;
+    border-top: 3px solid var(--primary-color);
+}
+
+/* --- REQUISITO 4: Diseño Responsivo --- */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+    }
+
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+}
